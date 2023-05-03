@@ -22,10 +22,14 @@
 
     <!-- HEADER -->
     <header class="d-flex justify-space-between align-center">
+
+        <!-- header's left element -->
         <div class="flex-left d-flex align-center">
+
             <div class="logo">
                 <img src="img/logo-small.png" alt="logo">
             </div>
+
             <nav>
                 <ul class="d-flex f-gap10">
                     <li><a href="#">Perchè Dropbox</a></li>
@@ -33,7 +37,10 @@
                     <li><a href="#">Piani e Prezzi</a></li>
                 </ul>
             </nav>
+
         </div>
+
+        <!-- header's right element -->
         <div class="flex-right">
             <nav>
                 <ul class="d-flex f-gap10">
@@ -51,18 +58,27 @@
 
         <!-- HERO SECTION -->
         <section id="hero">
+
+             <!-- footer has a bigger container than the rest of the main -->
             <div class="container-big">
+
                 <h1>Tutto ciò che ti serve per il posto di lavoro, in un unico posto</h1>
+
+                <!-- under main title the elements are flexed in two columns -->
                 <div class="d-flex">
-                    <div class="flex-left db-border">
+                    <div class="flex-left">
                         <p>
                             Finalmente tutti i tuoi strumenti, contenuti e collaboratori sono accessibili dallo stesso posto. Dropbox Business è piu' di uno spazio di archivazione sicuro: è un modo intelligente e integrato per ottimizzare il flusso di lavoro esistente.
                         </p>
+
+                        <!-- hero's button -->
                         <a href="#" class="btn btn-main">Inizia la tua prova gratuita</a>
+
                         <p>Annulla in qualsiasi momemnto</p>
                         <i class="fa-sharp fa-solid fa-arrow-down fa-3x"></i>
                     </div>
-                    <div class="flex-right db-border">
+
+                    <div class="flex-right">
                         <figure>
                             <img src="img/jumbo.png" alt="hero image">
                         </figure>
@@ -75,15 +91,18 @@
         <!-- SHOP SECTION -->
         <section id="shop">
             <div class="container-small">
+
                 <h2>Trova il piano business che fa per te</h2>
+
+                <!-- radio buttons -->
                 <div class="d-flex mb2">
                     <!-- display flex prefectly aligns radioes and text -->
-                    <span class="radio-btn radio-checked"></span><span class="mr2">Fatturazione mensile</span>
+                    <span class="radio-btn radio-checked"></span><span class="mr40">Fatturazione mensile</span>
                     <span class="radio-btn radio-unchecked"></span>Fatturazione annuale
                 </div>
 
+                <!-- flex container with purchasing plans -->
                 <div class="sopphing-cards-container d-flex justify-center f-gap40">
-
 
                     <!-- fist card
                     Professional card -->
@@ -103,8 +122,11 @@
                                 <li><span class="fa-li"><i class="fa-solid fa-folder"></i></span>5 TB di spazioe di archiviazione sicuro</li>
                                 <li><span class="fa-li"><i class="fa-solid fa-share-nodes"></i></span>Funzioni di produttività premium e condivisione file semplice e sicura</li>   
                             </ul>
+                            <!-- purchase button -->
                             <a class="btn btn-main" href="#">Prova gratis per 30 giorni</a>
+                            <!-- <a> tag is kept with default style -->
                             <p>oppure <a href="#">acquista ora</a></p>
+                            <!-- hr is used to divide elements in the same section -->
                             <hr>
                             <h6>Punti Salienti del piano</h6>
                             <!-- lists use font-awesome as list bullets, this way text is properly indented -->
@@ -191,18 +213,21 @@
 
                 <!-- the single card has the same layout so it shares some classes -->
                 <div class="card only-onrow-card">
+                    <!-- title -->
                     <div class="card-title">
                         <i class="fa-solid fa-building"></i> Team
                     </div>
+                    <!-- card body is flexed to align text in two columns -->
                     <div class="card-body d-flex justify-space-between align-flex-start">
+
                         <div class="flex-left">
                             <h4>Enterprise</h4>
                             <div class="price mb3">Contatta l'ufficio vendite per i prezzi</div>
                             <p>
                                 Soluzioni personalizzate e supporto su misura per aiutare i professionisti IT nella gestione su qualsiasi scala.
                             </p>
-
                         </div>
+
                         <div class="flex-right">
                             <a class="btn btn-main" href="#">Contatta l'ufficio vendite</a>
                         </div>
@@ -214,6 +239,8 @@
 
         <!-- PARTNERS SECTION -->
         <section id="partners">
+
+            <!-- this small section is just a flex container with two columns -->
             <div class="container-small d-flex">
                 <div class="flex-left">
                     <figure>
@@ -230,14 +257,18 @@
             </div>                
         </section>
 
-        <!-- DB BUSINESS SECTION -->    >
-
+        <!-- DB BUSINESS SECTION --> 
         <section id="dropbox-business-promo">
+
+            <!-- title -->
             <div class="container-small">
                 <h2>Esegui piu' operazioni con Dropbox Business</h2>
+
+                <!-- flex containers wraps two rows and 3 columns, gap class gives space only between rows -->
                 <div class="business-promo-container d-flex f-wrap f-rowgap20">
                     
                     <div class="flex-item">
+                        <!-- the flex item is just made of a figure and a div -->
                         <figure>
                             <img src="img/business-feature-switching-tools.png" alt="switching tools">
                         </figure>
@@ -313,17 +344,23 @@
             </div>
         </section>
         
-        <section id="dropbox-business-partners">
 
+        <!-- BUSINESS CLIENTS SECTION -->
+        <section id="dropbox-business-clients">
+
+            <!-- this section shows dropbox business clients -->
             <div class="container-small">
                 <h2>Piu' di 500.000 team utilizzano Dropbox Business</h2>
+                <!-- link has default style -->
                 <p class="mb5"><a href="#">Scopri di piu' sui nostri clienti</a></p>
             </div>
 
-            <div class="partners-logoes-container d-flex">
+            <!-- clients logoes are flexed in three equal columns; left and right columns are each divided in four equal squares with one client's logo each -->
+            <div class="clients-logoes-container d-flex">
 
+                <!-- left flexed layout column is identical to right -->
                 <div class="flex-left d-flex f-wrap">
-
+                    <!-- divs are flexed so that the logo img is perfectly centered -->
                     <div class="flex-item bg-designit d-flex align-center justify-center">
                         <img class="svg" src="img/designit.svg" alt="designit">
                     </div>
@@ -335,48 +372,58 @@
                     </div>  
                     <div class="flex-item bg-topps d-flex align-center justify-center">
                         <img class="svg" src="img/topps.svg" alt="topps">
-                    </div>               
-                    
+                    </div>    
                 </div>
-
+                
+                <!-- center column -->
                 <div class="flex-center">
                     <img src="img/designit.svg" alt="designit logo" class="svg">
+                    <!-- hr is used to divide same section -->
                     <hr>
-                    <p>
+                    <p class="mb5">
                         "I membri del nostro team lavorano costantemente in Paesi, fusi orari e uffici diversi. Ora molte soluzioni sono compatibili con queste esigenze, ma nessuna è facile quanto Dropbox e Dropbox Paper. Ora molte soluzioni sono compatibili con queste esigenze, ma nessuna è facile quanto Dropbox e Dropbox Paper."
-                        <br>
-                        <br>
-                        <br>
-                        Morten Thomsen, Global IT Lead
                     </p>
+                    <!-- above p's mb5 class gives 50px spacing -->
+                    <p>Morten Thomsen, Global IT Lead</p>
                 </div>
-
-
+                
+                
+                <!-- left flexed layout column is identical to right -->
                 <div class="flex-right d-flex f-wrap">
+                    
+                    <!-- divs are flexed so that the logo img is perfectly centered -->
                     <div class="flex-item bg-wbr d-flex align-center justify-center">
                         <img class="svg" src="img/world_bicycle_relief.svg" alt="world world_bicycle_relief">
                     </div>
+                    
                     <div class="flex-item bg-hearst d-flex align-center justify-center">
                         <img class="svg" src="img/hearst_corp.svg" alt="hearst_corp">
                     </div>
+                    
                     <div class="flex-item bg-lonely-planet d-flex align-center justify-center">
                         <img class="svg" src="img/lonely_planet.svg" alt="lonely_planet">
                     </div>
+
                     <div class="flex-item bg-cco d-flex align-center justify-center">
                         <img class="svg" src="img/clear_channel.svg" alt="clear_channel">
-                    </div>                        
+                    </div>
                 </div>
             </div>
 
-            <div class="bus-part-bottom">
+            <!-- under the clients logoes there is a free trial promo mini section; it's just two flexed column with a text on te left and a button on the right. -->
+            <div class="business-clients-bottom">
+
                 <div class="container-small d-flex align-center">
+
                     <div class="flex-left">
                         <h2>Porta Dropbox Business nella tua azienda</h2>
                     </div>
+
                     <div class="flex-right">
                         <a href="#" class="btn btn-secondary">Inizia la tua prova gratuita</a>
                     </div>              
                 </div>
+
             </div>
         </section>
 
@@ -384,6 +431,7 @@
 
         <!-- FAQ QUESTION -->
         <section id="faq">
+            <!-- to finish -->
             <div class="container-small">
                 <h2 class="border-bottom">Domande Frequenti</h2>
                 <div class="faq-row d-flex justify-space-between border-bottom">
@@ -405,10 +453,14 @@
         
     <!-- FOOTER -->
     <footer>
+
+        <!-- footer has a bigger container than the rest of the main -->
         <div class="container-big">
 
+            <!-- top part of the footer is a flex container with five columns -->
             <div class="fter-top d-flex">
 
+                <!-- each column has a an h4 title and a list of links -->
                 <div class="flex-item">
                     <h4>Dropbox</h4>
                     <ul>
@@ -419,7 +471,8 @@
                         <li><a href="#">Funzioni</a></li>
                     </ul>
                 </div>
-
+                
+                <!-- each column has a an h4 title and a list of links -->
                 <div class="flex-item">
                     <h4>Prodotti</h4>
                     <ul>
@@ -431,6 +484,7 @@
                     </ul>
                 </div>
 
+                <!-- each column has a an h4 title and a list of links -->
                 <div class="flex-item">
                     <h4>Azienda</h4>
                     <ul>
@@ -441,7 +495,8 @@
                         <li><a href="#">Funzioni</a></li>
                     </ul>
                 </div>
-
+                
+                <!-- each column has a an h4 title and a list of links -->
                 <div class="flex-item">
                     <h4>Supporto</h4>
                     <ul>
@@ -452,7 +507,8 @@
                         <li><a href="#">Funzioni</a></li>
                     </ul>
                 </div>
-
+                
+                <!-- each column has a an h4 title and a list of links -->
                 <div class="flex-item">
                     <h4>Community</h4>
                     <ul>
@@ -463,17 +519,18 @@
                         <li><a href="#">Funzioni</a></li>
                     </ul>
                 </div>
-
-                                   
             </div>
 
+            <!-- bottom part is of footer is just language selector, separated with a little bit of border -->
             <div class="fter-bottom">
+                <!-- span is used otherwise a div vould have a border long as the container -->
                 <span class="language-selector">
                     <i class="fa-solid fa-earth-americas"></i>
-                     Italiano 
+                    Italiano
                     <i class="fa-solid fa-caret-up"></i>
                 </span>
             </div>
+
         </div>
     </footer>
 
