@@ -244,7 +244,7 @@ section#hero{
     margin-left: 1.5rem;
 }
 
-.card-body h3{
+.card-body h4{
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -274,7 +274,7 @@ section#hero{
     color: lightgray;
 }
 
-.card-body h4{
+.card-body h5{
     margin-bottom: 1rem;
 }
 
