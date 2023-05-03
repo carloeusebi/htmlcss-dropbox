@@ -72,17 +72,27 @@ hr{
 h1{
     font-size: 4rem;
     font-weight: 900;
-    margin-bottom: 4rem;
+    padding-bottom: 4.5rem;
 }
 
 h2{
     font-size: 2rem;
-    margin-bottom: 2rem;
+    padding-bottom: 3.5rem;
 }
 
 h3{
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+h4{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h6{
+    margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
 p{
@@ -166,9 +176,12 @@ p{
 }
 
 .btn.btn-secondary{
-    border: 1px solid black;
     background-color: white;
     color: black;
+}
+
+.border-black{
+    border: 1px solid black;
 }
 
 .mr2{
@@ -189,6 +202,10 @@ p{
 
 .mb5{
     margin-bottom: 5rem;
+}
+
+.border-bottom{
+    border-bottom: 1px solid black;
 }
 
 
@@ -281,11 +298,6 @@ section#hero{
     margin-left: 1.5rem;
 }
 
-.card-body h4{
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
 .card-body .price{
     font-weight: bolder;
 }
@@ -305,10 +317,7 @@ section#hero{
     margin: 0 auto 1rem;
 }
 
-.card-body h5{
-    margin-bottom: 1rem;
-    font-size: 1rem;
-}
+
 
 .card-body.d-flex .flex-left{
     flex-basis: 66%;
@@ -325,13 +334,17 @@ section#hero{
 }
 
 /* business section */
-.partners-logoes-container > *{
-    flex: 0 0 calc(100% / 3);
+.business-promo-container{
+    margin: 0 -2rem;
 }
 
 #dropbox-business-promo .flex-item{
     width: calc(100% / 3);
     padding: 2rem;
+}
+
+.partners-logoes-container > *{
+    flex: 0 0 calc(100% / 3);
 }
 
 /* business partners logoes */
@@ -382,32 +395,57 @@ section#hero{
     background-color: var(--bg-cco);
 }
 
-#dropbox-business-partners .bottom-part{
+.bus-part-bottom-part{
     background-color: var(--hero-bg-color);
-    height: 200px;
+    color: #61082b;
+    padding: 100px 0;
 }
 
-#faq .container-small{
-    height: 200px;
-    border: 2px dashed black;
+.bus-part-bottom-part .flex-left{
+    flex: 0 0 60%;
+}
+
+.bus-part-bottom-part .flex-right{
+    flex: 0 0 40%;
+    text-align: right;
+    align-self: flex-start;
+}
+
+/* FAQ */
+.faq-row{
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    cursor: pointer;
 }
 
 /* FOOTER */
 footer{
     background-color: var(--fter-color);
-    padding: 20px 0;
     color: white;
+    padding: 4rem 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer li{
+    padding-bottom: 1rem;
 }
 
 footer .flex-item{
     flex: 0 0 calc(100% / 5);
     margin-bottom: 50px;
-    height: 200px;
-    border: 2px dashed white;
 }
 
-footer .language{
-    padding-top: 20px;
-    padding-right: 10px;
-    border-top: 1px solid gray;
+.fter-top{
+    padding-bottom: 4rem;
+}
+
+footer .language-selector{
+    padding-top: 2rem;
+    padding-right: 2rem;
+    border-top: 2px solid gray;
+    color: gray;
+    cursor: pointer;
 }
