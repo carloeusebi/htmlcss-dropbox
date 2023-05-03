@@ -10,18 +10,17 @@
     --hero-bg-color: #b4d0e7;
     --blue-btn-color: #0061ff;
     --fter-color: #000;
-    --hdr-height: 100px;
+    --hdr-height: 75px;
 }
 
 /* debug */
 .debug .db-border{
-    border: 2px dashed black;
+    border: 2px dotted black;
     height: 200px;
 }
 
-.flex-left, .flex-right, .flex-item{
+.debug .flex-left, .debug .flex-right, .debug .flex-item{
     border: 2px dashed black;
-    height: 200px;
 }
 
 
@@ -29,6 +28,15 @@
 body{
     font-family: "Opens Sans", sans-serif;
     padding-top: var(--hdr-height);
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: black;
+    text-decoration: none;
 }
 
 /* utilites */
@@ -58,17 +66,38 @@ body{
     flex-wrap: wrap;
 }
 
+.d-flex.align-center{
+    align-items: center;
+}
+
+.d-flex.f-gap10{
+    gap: 10px;
+}
+
+.btn.btn-main{
+    background-color: var(--blue-btn-color);
+    color: white;
+}
+
 /* HEADER */
 header{
     height: var(--hdr-height);
     /* it's needed otherwise background is transparent */
     background-color: #fff;
+    padding: 20px 10px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1;    
-    border-bottom: 2px solid black;
+}
+
+header .logo{
+    margin-right: 20px;
+}
+
+header a{
+    padding: 10px;
 }
 
 /* MAIN */
