@@ -395,20 +395,25 @@ section#hero{
     background-color: var(--bg-cco);
 }
 
-.bus-part-bottom-part{
+.bus-part-bottom{
     background-color: var(--hero-bg-color);
     color: #61082b;
     padding: 100px 0;
 }
 
-.bus-part-bottom-part .flex-left{
+.bus-part-bottom .flex-left{
     flex: 0 0 60%;
 }
 
-.bus-part-bottom-part .flex-right{
+.bus-part-bottom .flex-right{
     flex: 0 0 40%;
     text-align: right;
     align-self: flex-start;
+}
+
+/* need to overwrite h2 padding or it will offset h2 vertically */
+.bus-part-bottom h2{
+    padding: 0;
 }
 
 /* FAQ */
