@@ -1,0 +1,156 @@
+/* css reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* custom properties */
+:root{
+    --hero-bg-color: #b4d0e7;
+    --blue-btn-color: #0061ff;
+    --fter-color: #000;
+    --hdr-height: 100px;
+}
+
+/* debug */
+.debug .db-border{
+    border: 2px dashed black;
+    height: 200px;
+}
+
+.flex-left, .flex-right, .flex-item{
+    border: 2px dashed black;
+    height: 200px;
+}
+
+
+/* generals */
+body{
+    font-family: "Opens Sans", sans-serif;
+    padding-top: var(--hdr-height);
+}
+
+/* utilites */
+.container-big{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container-small{
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.d-flex.justify-center{
+    justify-content: center;
+}
+
+.d-flex.justify-space-between{
+    justify-content: space-between;
+}
+
+.d-flex.f-wrap{
+    flex-wrap: wrap;
+}
+
+/* HEADER */
+header{
+    height: var(--hdr-height);
+    /* it's needed otherwise background is transparent */
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;    
+    border-bottom: 2px solid black;
+}
+
+/* MAIN */
+section{
+    margin-bottom: 50px;
+}
+
+/* hero section */
+section#hero{
+    background: linear-gradient(var(--hero-bg-color) 85%, #FFF 15%);
+}
+
+#hero .flex-left{
+    flex: 0 0 35%;
+}
+
+#hero .flex-right{
+    flex: 0 0 65%;
+}
+
+/* shop section */
+.shopping-plan{
+    flex: 0 0 calc(100%/3);
+}
+
+.card{
+    height: 200px;
+}
+
+/* partners section */
+#partners .flex-left{
+    flex: 0 0 55%;
+}
+
+#partners .flex-right{
+    flex: 0 0 45%;
+}
+
+/* business section */
+#dropbox-business-promo .flex-item{
+    width: calc(100% / 3);
+}
+
+.partners-logoes-container *{
+    border: 2px dashed black;
+}
+
+.partners-logoes-container > *{
+    flex: 0 0 calc(100% / 3);
+}
+
+.partners-logoes-container .flex-item{
+    flex: 0 0 50%;
+    height: 100px;
+}
+
+#dropbox-business-partners .bottom-part{
+    background-color: var(--hero-bg-color);
+    height: 200px;
+}
+
+#faq .container-small{
+    height: 200px;
+    border: 2px dashed black;
+}
+
+/* FOOTER */
+footer{
+    background-color: var(--fter-color);
+    padding: 20px 0;
+    color: white;
+}
+
+footer .flex-item{
+    flex: 0 0 calc(100% / 5);
+    margin-bottom: 50px;
+    height: 200px;
+    border: 2px dashed white;
+}
+
+footer .language{
+    padding-top: 20px;
+    padding-right: 10px;
+    border-top: 1px solid gray;
+}
