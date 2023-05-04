@@ -236,6 +236,13 @@ header a{
     padding: 10px;
 }
 
+header li:hover {
+    border-bottom: 2px solid green;
+    height: var(--hdr-height);
+    /* border tops prevents boder bottom to push text up 2px */
+    border-top: 2px solid transparent;
+}
+
 /* MAIN */
 section{
     margin-bottom: 100px;
