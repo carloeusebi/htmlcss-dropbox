@@ -27,11 +27,11 @@
 
         <!-- header's left element -->
         <div class="flex-left d-flex align-center">
-
+            
             <div class="logo">
-                <img src="img/logo-small.png" alt="logo">
+                <a href="#"><img src="img/logo-small.png" alt="logo"></a>
             </div>
-
+            
             <nav>
                 <ul class="d-flex f-gap10">
                     <li class="d-flex align-center"><a href="#">Perchè Dropbox</a></li>
@@ -69,23 +69,25 @@
                 <!-- under main title the elements are flexed in two columns -->
                 <div class="d-flex">
                     <div class="flex-left">
-                        <p>
+                        <p class="mb3">
                             Finalmente tutti i tuoi strumenti, contenuti e collaboratori sono accessibili dallo stesso posto. Dropbox Business è piu' di uno spazio di archivazione sicuro: è un modo intelligente e integrato per ottimizzare il flusso di lavoro esistente.
                         </p>
 
                         <!-- hero's button -->
-                        <a href="#" class="btn btn-main">Inizia la tua prova gratuita</a>
+                        <a href="#" class="btn btn-main mb3">Inizia la tua prova gratuita</a>
 
                         <p>Annulla in qualsiasi momemnto</p>
-                        <i class="fa-sharp fa-solid fa-arrow-down fa-3x"></i>
                     </div>
-
+                    
                     <div class="flex-right">
                         <figure>
                             <img src="img/jumbo.png" alt="hero image">
                         </figure>
                     </div>
                 </div>
+
+                <!-- arrow down is a son of the container, not its flex item -->
+                <i class="fa-sharp fa-solid fa-arrow-down fa-3x"></i>
 
             </div>
         </section>
@@ -97,7 +99,7 @@
                 <h2>Trova il piano business che fa per te</h2>
 
                 <!-- radio buttons -->
-                <div class="d-flex mb2">
+                <div class="d-flex mb5">
                     <!-- display flex prefectly aligns radioes and text -->
                     <span class="radio-btn radio-checked"></span><span class="mr40">Fatturazione mensile</span>
                     <span class="radio-btn radio-unchecked"></span>Fatturazione annuale
@@ -354,7 +356,7 @@
             <div class="container-small">
                 <h2>Piu' di 500.000 team utilizzano Dropbox Business</h2>
                 <!-- link has default style -->
-                <p class="mb5"><a href="#">Scopri di piu' sui nostri clienti</a></p>
+                <p class="mb10"><a href="#">Scopri di piu' sui nostri clienti</a></p>
             </div>
 
             <!-- clients logoes are flexed in three equal columns; left and right columns are each divided in four equal squares with one client's logo each -->
@@ -428,7 +430,6 @@
 
             </div>
         </section>
-
        
 
         <!-- FAQ QUESTION -->
@@ -472,7 +473,6 @@
                     </div>
                 </div>
         
-                </div>
 
             </div>
         </section>

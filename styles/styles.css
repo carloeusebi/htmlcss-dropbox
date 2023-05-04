@@ -1,17 +1,17 @@
-/* css reset */
+/* !css reset */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* custom properties */
+/* !custom properties */
 :root{
     --hero-bg-color: #b4d0e7;
     --blue-btn-color: #0061ff;
+    --blue-btn-color-on-hover: #0061ff80;
     --fter-color: #000;
     --hdr-height: 75px;
-
 
     /* partners logoes background */
     --bg-designit: #a2d39b;
@@ -22,11 +22,10 @@
     --bg-hearst: #b4d0e7;
     --bg-lonely-planet: #0d2481;
     --bg-cco: #ffd830;
-
     --bg-main-logo: #f5f5f5;
 }
 
-/* generals */
+/* !generals */
 body{
     font-family: "Opens Sans", sans-serif;
     padding-top: var(--hdr-height);
@@ -87,7 +86,7 @@ p{
     line-height: 1.4;
 }
 
-/* utilites */
+/* !utilites */
 .container-big{
     max-width: 1440px;
     margin: 0 auto;
@@ -114,6 +113,63 @@ p{
     border: 2px solid gray;
 }
 
+.btn{
+    padding: 15px 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.btn.btn-main{
+    background-color: var(--blue-btn-color);
+    color: white;
+}
+
+.btn.btn-secondary{
+    background-color: white;
+    color: black;
+}
+
+.btn.border-black{
+    border: 1px solid black;
+}
+
+.btn.btn-main:hover{
+    background-color: var(--blue-btn-color-on-hover);
+}
+
+.btn.btn-secondary:hover{
+    background-color: #eee;
+}
+
+.mr40{
+    margin-right: 40px;
+}
+
+.mb1{
+    margin-bottom: 10px;
+}
+
+.mb2{
+    margin-bottom: 20px;
+}
+
+.mb3{
+    margin-bottom: 30px;
+}
+
+.mb5{
+    margin-bottom: 50px;
+}
+
+.mb10{
+    margin-bottom: 100px;
+}
+
+.border-bottom{
+    border-bottom: 1px solid black;
+}
+
+/* !flex utilities */
 .d-flex{
     display: flex;
 }
@@ -128,6 +184,7 @@ p{
 
 .d-flex.f-wrap{
     flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .d-flex.align-center{
@@ -154,68 +211,13 @@ p{
     flex-direction: column;
 }
 
-.btn{
-    padding: 15px 20px;
-    position: relative;
-}
-
-.btn.btn-main{
-    background-color: var(--blue-btn-color);
-    color: white;
-}
-
-.btn.btn-secondary{
-    background-color: white;
-    color: black;
-}
-
-.btn.border-black{
-    border: 1px solid black;
-}
-
-.btn:hover::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, .3);
-}
-
-.mr40{
-    margin-right: 40px;
-}
-
-.mb1{
-    margin-bottom: 10px;
-}
-
-.mb2{
-    margin-bottom: 20px;
-}
-
-.mb3{
-    margin-bottom: 30px;
-}
-
-.mb5{
-    margin-bottom: 50px;
-}
-
-.border-bottom{
-    border-bottom: 1px solid black;
-}
-
-
-/* HEADER */
+/* !HEADER */
 header{
     height: var(--hdr-height);
     /* it's needed otherwise background is transparent */
     background-color: #fff;
     padding: 20px 10px;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -223,72 +225,71 @@ header{
     z-index: 1;    
 }
 
+/* this gives the same space between the logo and the list as the list elements themselves */
+.logo{
+    padding-right: 10px;
+}
+
 header a{
     color: black;
     text-decoration: none;
-}
-
-header .logo{
-    margin-right: 20px;
-}
-
-header a{
     padding: 10px;
 }
 
-header li:hover {
+header li:hover{
     border-bottom: 2px solid green;
     height: var(--hdr-height);
-    /* border tops prevents boder bottom to push text up 2px */
+    /* border top prevents boder bottom to push text up 2px */
     border-top: 2px solid transparent;
 }
 
-/* MAIN */
+/* !MAIN */
+/* every section has margin bottom */
 section{
     margin-bottom: 100px;
 }
 
-main .btn{
-    display: inline-block;
-}
-
-/* hero section */
+/* !hero section */
 section#hero{
-    /* background may change */
-    background: linear-gradient(var(--hero-bg-color) 85%, #FFF 15%);
+    /* this way background is mainly the choosen color but the last bit is transparent as the rest of the main */
+    background: linear-gradient(var(--hero-bg-color) 85%, transparent 15%);
     padding-top: 50px;
     font-size: 1.2rem;
 }
 
+#hero .container-big{
+    /* position relative gives the left container a non-static position, to give the arrow proper placement */
+    position: relative;
+}
+
 #hero .flex-left{
     flex: 0 0 30%;
-    position: relative;
 }
 
 #hero .flex-right{
     flex: 0 0 70%;
 }
 
-#hero .flex-left > *{
-    margin-bottom: 30px;
-}
-
 #hero .fa-arrow-down{
     position: absolute;
-    /* bottom at 15% should follow background */
+    /* bottom at 15% should follow background transition*/
     bottom: 15%;
     left: 0;
     padding-bottom: 10px;
 }
 
-/* shop section */
+/*! shop section */
+/* every card takes one third of the width minus the 40px gaps between them */
 .card-flex{
     flex: 0 0 calc((100% - 80px) / 3);
 }
 
+/* containers margin gives it room form the table under */
 .sopphing-cards-container{
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
+
+/* card property, they should be pretty self-explainatory */
 
 .card{
     border: 1px solid lightgray;
@@ -336,7 +337,8 @@ section#hero{
     flex-basis: 66%;
 }
 
-/* partners section */
+/*! partners section */
+/* just two flex items, left one's a litte bigger */
 #partners .flex-left{
     flex: 0 0 55%;
 }
@@ -346,24 +348,28 @@ section#hero{
     padding: 50px;
 }
 
-/* business section */
+/*! business section */
+/* negative margin align content to main container */
 .business-promo-container{
     margin: 0 -30px;
 }
 
+/* every item width is divided by 3 to have 3 columns, padding is used to give them gutter */
 #dropbox-business-promo .flex-item{
     width: calc(100% / 3);
     padding: 30px;
 }
 
-/* business clients */
+/*! business clients */
 
+/* this divides the client's logoes section in three columns */
 .clients-logoes-container > *{
     flex: 0 0 calc(100% / 3);
 }
 
 .clients-logoes-container img{
-    width: 50%;
+    /* since hover effect is a border, i can't use percentages to give imgs width or they will resize on hover, to give them width: 50% i take the square width( 100vw / 3 cols / 2 per row and divide it by 2, => 100wv / 12 */
+    width: calc(100vw / 12);
 }
 
 /* this makes svgs white */
@@ -373,20 +379,22 @@ img.svg{
 
 .clients-logoes-container .flex-item{
     flex: 0 0 50%;
-    /* height is necessary to give the items squared appearance; it may change */
-    height: 300px;
+    /* to be perfectly squared their height must also be the same as the width, which is 100vw / 3 columns / 2 per rows */
+    height: calc(100vw / 6);
 }
 
+/* effect on hover is just a transparent border */
 .clients-logoes-container .flex-item:hover{
-    border: 20px solid rgba(255, 255, 255, .5);
+    border: 20px solid rgba(255, 255, 255, .3);
 }
 
+/* main column between the logoes, it is given padding and background */
 #dropbox-business-clients .flex-center{
     background-color: var(--bg-main-logo);
     padding: 50px;
 }
 
-/* partners-logo backgrounds */
+/*! partners-logo backgrounds */
 .bg-designit{
     background-color: var(--bg-designit)
 }
@@ -419,6 +427,7 @@ img.svg{
     background-color: var(--bg-cco);
 }
 
+/* the free-trial card, background, text color are given; also lots of padding to properly give it height */
 .business-clients-bottom{
     background-color: var(--hero-bg-color);
     color: #61082b;
@@ -429,42 +438,48 @@ img.svg{
     flex: 0 0 60%;
 }
 
+/* to align bottom in the top right corner */
 .business-clients-bottom .flex-right{
     flex: 0 0 40%;
     text-align: right;
     align-self: flex-start;
 }
 
-/* need to overwrite h2 padding or it will offset h2 */
+/* need to overwrite h2 padding or this particalar h2 won't be vertically aligned */
 .business-clients-bottom h2{
     padding: 0;
 }
 
-/* FAQ */
+/*! FAQ */
 .faq-row{
     padding: 30px 30px 30px 0;
     cursor: pointer;
 }
 
+/* faq answer is not normally visible */
 .faq-answer{
     padding-top: 30px;
     display: none;
 }
 
+/* on hover it becomes visible */
 .faq-row:hover .faq-answer{
     display: block;
 }
 
+
+/* on hover the arrow needs to no longer be visible and... */
 .faq-row:hover .fa-angle-down{
     display: none;
 }
 
+/* ... be replaced by an arrow up */
 .faq-row:hover .faq-question::after{
     content: "\f106";
     font: var(--fa-font-solid);
 }
 
-/* FOOTER */
+/*! FOOTER */
 footer{
     background-color: var(--fter-color);
     color: white;
@@ -478,6 +493,10 @@ footer a{
 
 footer li{
     padding-bottom: 15px;
+}
+
+footer a:hover{
+    color: #aaa;
 }
 
 footer .flex-item{
@@ -496,4 +515,8 @@ footer .language-selector{
     border-top: 2px solid gray;
     color: gray;
     cursor: pointer;
+}
+
+footer .language-selector:hover{
+    color: white;
 }
