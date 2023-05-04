@@ -98,19 +98,18 @@ p{
 }
 
 .radio-btn{
+    appearance: none;
     display: inline-block;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     margin-right: 10px;
-}
-
-.radio-btn.radio-checked{
-    border: 5px solid var(--blue-btn-color);
-}
-
-.radio-btn.radio-unchecked{
     border: 2px solid gray;
+    cursor: pointer;
+}
+
+.radio-btn:checked{
+    border: 5px solid var(--blue-btn-color);
 }
 
 .btn{
@@ -141,7 +140,7 @@ p{
     background-color: #eee;
 }
 
-.mr40{
+.mr4{
     margin-right: 40px;
 }
 

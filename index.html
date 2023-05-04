@@ -101,8 +101,15 @@
                 <!-- radio buttons -->
                 <div class="d-flex mb5">
                     <!-- display flex prefectly aligns radioes and text -->
-                    <span class="radio-btn radio-checked"></span><span class="mr40">Fatturazione mensile</span>
-                    <span class="radio-btn radio-unchecked"></span>Fatturazione annuale
+                    <label for="monthly-billing" class="mr4 d-flex align-center">
+                        <input id="monthly-billing" value="monthly-billing" name="business-plan" type="radio" class="radio-btn" checked>
+                        Fatturazione mensile
+                    </label>
+                    
+                    <label for="annual-billing" class="mr4 d-flex align-center">
+                        <input id="annual-billing" value="annual-billing" name="business-plan" type="radio" class="radio-btn">
+                        Fatturazione annuale
+                    </label>
                 </div>
 
                 <!-- flex container with purchasing plans -->
