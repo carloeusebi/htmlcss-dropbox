@@ -156,6 +156,7 @@ p{
 
 .btn{
     padding: 15px 20px;
+    position: relative;
 }
 
 .btn.btn-main{
@@ -170,6 +171,18 @@ p{
 
 .btn.border-black{
     border: 1px solid black;
+}
+
+.btn:hover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .3);
 }
 
 .mr40{
@@ -346,10 +359,19 @@ section#hero{
     width: 50%;
 }
 
+/* this makes svgs white */
+img.svg{
+    filter:invert(1);
+}
+
 .clients-logoes-container .flex-item{
     flex: 0 0 50%;
     /* height is necessary to give the items squared appearance; it may change */
     height: 300px;
+}
+
+.clients-logoes-container .flex-item:hover{
+    border: 20px solid rgba(255, 255, 255, .5);
 }
 
 #dropbox-business-clients .flex-center{
@@ -415,6 +437,24 @@ section#hero{
 .faq-row{
     padding: 30px 30px 30px 0;
     cursor: pointer;
+}
+
+.faq-answer{
+    padding-top: 30px;
+    display: none;
+}
+
+.faq-row:hover .faq-answer{
+    display: block;
+}
+
+.faq-row:hover .fa-angle-down{
+    display: none;
+}
+
+.faq-row:hover .faq-question::after{
+    content: "\f106";
+    font: var(--fa-font-solid);
 }
 
 /* FOOTER */
