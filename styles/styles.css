@@ -44,12 +44,14 @@ a.btn{
 img{
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
 hr{
-    margin: 40px 0;
-    width: 20%;
-    color: lightgray;
+    margin: 60px 0;
+    width: 25%;
+    border: none;
+    border-bottom: 1px solid lightgray;
 }
 
 h1{
@@ -165,7 +167,7 @@ p{
 }
 
 .border-bottom{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid lightgray;
 }
 
 /* !flex utilities */
@@ -240,6 +242,11 @@ header li:hover{
     height: var(--hdr-height);
     /* border top prevents boder bottom to push text up 2px */
     border-top: 2px solid transparent;
+}
+
+/* header button is a little bit shorter than the others so it needs some tweaking */
+header .btn.btn-main{
+    padding: 7px 15px;
 }
 
 /* !MAIN */
@@ -327,9 +334,9 @@ section#hero{
 }
 
 .card-body .btn{
-    width: 100%;
+    display: block;
     text-align: center;
-    margin: 0 auto 20px;
+    margin: 20px 0;
 }
 
 .card-body.d-flex .flex-left{
@@ -384,7 +391,7 @@ img.svg{
 
 /* effect on hover is just a transparent border */
 .clients-logoes-container .flex-item:hover{
-    border: 20px solid rgba(255, 255, 255, .3);
+    border: 30px solid rgba(255, 255, 255, .2);
 }
 
 /* main column between the logoes, it is given padding and background */
@@ -426,7 +433,7 @@ img.svg{
     background-color: var(--bg-cco);
 }
 
-/* the free-trial card, background, text color are given; also lots of padding to properly give it height */
+/* the free-trial card, background and text color are given; also lots of padding to properly give it height */
 .business-clients-bottom{
     background-color: var(--hero-bg-color);
     color: #61082b;
@@ -437,7 +444,7 @@ img.svg{
     flex: 0 0 60%;
 }
 
-/* to align bottom in the top right corner */
+/* to align button in the top right corner */
 .business-clients-bottom .flex-right{
     flex: 0 0 40%;
     text-align: right;
@@ -449,8 +456,15 @@ img.svg{
     padding: 0;
 }
 
+/* this particular button is a little bit flatter than the others so it needs some tweaking. */
+.business-clients-bottom .btn{
+    padding-left: 75px;
+    padding-right: 75px;
+}
+
 /*! FAQ */
 .faq-row{
+    /* no padding on the left */
     padding: 30px 30px 30px 0;
     cursor: pointer;
 }
@@ -467,7 +481,7 @@ img.svg{
 }
 
 
-/* on hover the arrow needs to no longer be visible and... */
+/* on hover the arrow down needs to no longer be visible and... */
 .faq-row:hover .fa-angle-down{
     display: none;
 }
@@ -498,22 +512,22 @@ footer a:hover{
     color: #aaa;
 }
 
+/* 5 flex columns take 20% of space */
 footer .flex-item{
-    flex: 0 0 calc(100% / 5);
-    margin-bottom: 50px;
-}
-
-.fter-top{
-    padding-bottom: 50px;
+    flex: 0 0 20%;
 }
 
 footer .language-selector{
     padding-top: 25px;
-    /* pad-right is used to determinate the above bar length */
+    /* pad-right is used to determinate the above divisor bar length */
     padding-right: 75px;
     border-top: 2px solid gray;
     color: gray;
     cursor: pointer;
+}
+
+footer .language{
+    padding: 0 5px;
 }
 
 footer .language-selector:hover{
