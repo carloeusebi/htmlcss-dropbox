@@ -80,7 +80,9 @@
                         <a href="#" class="btn btn-main mb3">Inizia la tua prova gratuita</a>
 
                         <p class="mb7">Annulla in qualsiasi momento</p>
-                        <i class="fa-sharp fa-solid fa-arrow-down fa-3x"></i>
+                        <a class="link-to-shop" href="#shop">
+                            <i class="fa-sharp fa-solid fa-arrow-down fa-3x fa-bounce"></i>
+                        </a>
                     </div>
                     
                     <div class="flex-right">
@@ -104,7 +106,7 @@
                 <div class="d-flex mb5">
                     <!-- display flex prefectly aligns radioes and text -->
                     <label for="monthly-billing" class="mr4 d-flex align-center">
-                        <input id="monthly-billing" value="monthly-billing" name="business-plan" type="radio" class="radio-btn" checked>
+                        <input id="monthl <input idy-billing" value="monthly-billing" name="business-plan" type="radio" class="radio-btn" checked>
                         Fatturazione mensile
                     </label>
                     
@@ -485,6 +487,61 @@
 
             </div>
         </section>
+
+        <!-- FIXED CHAT -->
+        <div id="fixed-chat">
+
+            <!-- chat top bar -->
+            <div class="chat-top-bar d-flex justify-center">
+                <div class="chat-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+
+                <div class="chat-chat">Chat</div>
+
+                <div class="chat-controls">
+                    <i class="fa-solid fa-minus"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+            </div>
+
+            <!-- chat body -->
+            <div class="chat-body">
+                
+                <!-- chat conversation -->
+                <div class="chat-conversation">
+
+                    <div class="text-row d-flex">
+                        <div class="sender">
+                            <img class="sender-avatar" src="img/chat-logo.png" alt="sender avatar">                                
+                            <div class="sender-name">Carmelle</div>
+                        </div>
+                        <div class="text-message">
+                            Hello, can I help answer any questions about Dropbox?
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- chat type section -->
+                <div class="chat-bottom">
+                    
+                    <form class="d-flex justify-space-between align-flex-start">
+                        <textarea name="chat-input" id="chat-input" rows="5" placeholder="Type you message..."></textarea>
+                        <button type="submit"><i class="fa-solid fa-right-to-bracket fa-2x"></i></button>
+                    </form>                   
+                    
+                    <img class="chat-db-logo mb1" src="img/chat-logo.png" alt="sender avatar">  
+                    
+                    <div class="chat-engine d-flex  justify-center align-center">
+                        <span>Powered by </span>
+                        <img class="chat-teamsupport" src="img/teamsupport.png" alt="team support logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
         
     <!-- FOOTER -->

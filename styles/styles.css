@@ -27,6 +27,10 @@
 }
 
 /* !generals */
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: "Opens Sans", sans-serif;
     padding-top: var(--hdr-height);
@@ -269,7 +273,17 @@ section#jumbo{
     flex: 0 0 70%;
 }
 
+#jumbo .link-to-shop{
+    text-decoration: none;
+    color: black;
+}
+
 /*! shop section */
+/* padding gives it room on top so that h2 title doesnt go under header when click on arrow brings to this section */
+#shop{
+    padding-top: 100px;
+}
+
 /* every card takes one third of the width minus the 40px gaps between them */
 .card-flex{
     flex: 0 0 calc((100% - 80px) / 3);
@@ -477,11 +491,122 @@ img.svg{
     font: var(--fa-font-solid);
 }
 
+/*! CHAT */
+#fixed-chat{
+    width: 20vw;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 20px gray;
+
+    position: fixed;
+    right: 1vw;
+    bottom: 1vw;
+    z-index: 1;
+    /* animation: chat-animation 1.5s ease-in-out 3.5s 1 forwards; */
+}
+
+/* @keyframes chat-animation {
+    0%{
+        bottom: -80vh;
+    }
+    100%{
+        bottom: 2vh;
+    }    
+} */
+
+.chat-top-bar{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #0d2481;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    user-select: none;
+}
+
+.chat-controls i{
+    cursor: pointer;
+}
+
+.chat-top-bar .chat-chat{
+    flex-grow: 2;
+    font-weight: bold;
+}
+
+.chat-conversation{
+    height: 35vh;
+    overflow-y: auto;
+}
+
+.chat-body{
+    padding: 20px;
+    padding-bottom: 5px;
+}
+
+.text-row .sender{
+    flex-basis: 15%;
+    align-self: flex-end;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.sender-avatar{
+    border-radius: 50%;
+}
+
+.sender .sender-name,
+.chat-engine span{
+    font-size: .75rem;
+    color: lightgray;
+    user-select: none;
+}
+
+.text-row .text-message{
+    flex-basis: 85%;
+    background-color: #edf4ff;
+    padding: 15px;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    margin-bottom: 10px;
+}
+
+.chat-bottom{
+    border-top: 1px solid black;
+    padding-top: 15px;
+}
+
+.chat-bottom textarea{
+    border: none;
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+    width: 80%;
+    resize: none;
+    font-size: .9rem;
+    margin-left: 10px;
+}
+
+.chat-bottom button{
+    border: none;
+    background-color: white;
+    color: #0d2481;
+    cursor: pointer
+}
+
+.chat-bottom .chat-db-logo{
+    width: 40px;
+}
+
+.chat-teamsupport{
+    display: inline-block;
+    width: auto;
+    height: .9rem;
+}
+
 /*! FOOTER */
 footer{
     background-color: var(--fter-color);
     color: white;
-    padding: 70px 0;
+    padding: 70px 0;    
 }
 
 footer a{
