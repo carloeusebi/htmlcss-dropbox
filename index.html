@@ -27,16 +27,18 @@
 
         <!-- header's left element -->
         <div class="flex-left d-flex align-center">
+
+            <!-- a couple of thoughts about how buttons work; to me they should be has high as header, since the bar on hover appears on header's bottom edge; but in Marco's demo only text looks clickable, while hover effects appear while hovering on non-clickable parts; I don't like that sinse it may be measleading for the user but I chose anyway to mimic that behaviour to replicate the project -->
             
-            <div class="logo">
-                <a href="#"><img src="img/logo-small.png" alt="logo"></a>
-            </div>
-            
+            <!-- <img src="img/logo-small.png" alt="logo"> -->
+
             <nav>
-                <ul class="d-flex f-gap10">
-                    <li class="d-flex align-center"><a href="#">Perchè Dropbox</a></li>
-                    <li class="d-flex align-center"><a href="#">Funzioni</a></li>
-                    <li class="d-flex align-center"><a href="#">Piani e Prezzi</a></li>
+                <ul class="d-flex">
+                    <!-- flex is used to align logo inside button, wich is as high as header -->
+                    <li class="d-flex align-center"><a class="btn btn-secondary" href="#"><img src="img/logo-small.png" alt="logo"></a></li>
+                    <li><a class="btn btn-secondary" href="#">Perchè Dropbox</a></li>
+                    <li><a class="btn btn-secondary" href="#">Funzioni</a></li>
+                    <li><a class="btn btn-secondary" href="#">Piani e Prezzi</a></li>
                 </ul>
             </nav>
 
@@ -45,11 +47,12 @@
         <!-- header's right element -->
         <div class="flex-right">
             <nav>
-                <ul class="d-flex f-gap10">
-                    <li class="d-flex align-center"><a href="#">Supporto</a></li>
-                    <li class="d-flex align-center"><a href="#">Contatta l'ufficio vendite</a></li>
-                    <li class="d-flex align-center"><a href="#">Accedi</a></li>
-                    <li class="d-flex align-center"><a class="btn btn-main" href="#">Inizia</a></li>
+                <ul class="d-flex">
+                    <li><a class="btn btn-secondary" href="#">Supporto</a></li>
+                    <li><a class="btn btn-secondary" href="#">Contatta l'ufficio vendite</a></li>
+                    <li><a class="btn btn-secondary" href="#">Accedi</a></li>
+                    <!-- actual button is as large as header, but only text  -->
+                    <li><a class="btn btn-main" href="#">Inizia</a></li>
                 </ul>
             </nav>
         </div>
@@ -59,7 +62,7 @@
     <main>
 
         <!-- HERO SECTION -->
-        <section id="hero">
+        <section id="jumbo">
 
              <!-- footer has a bigger container than the rest of the main -->
             <div class="container-big">
@@ -76,7 +79,8 @@
                         <!-- hero's button -->
                         <a href="#" class="btn btn-main mb3">Inizia la tua prova gratuita</a>
 
-                        <p>Annulla in qualsiasi momento</p>
+                        <p class="mb7">Annulla in qualsiasi momento</p>
+                        <i class="fa-sharp fa-solid fa-arrow-down fa-3x"></i>
                     </div>
                     
                     <div class="flex-right">
@@ -86,8 +90,6 @@
                     </div>
                 </div>
 
-                <!-- arrow down is a son of the container, not its flex item -->
-                <i class="fa-sharp fa-solid fa-arrow-down fa-3x"></i>
 
             </div>
         </section>
@@ -113,7 +115,7 @@
                 </div>
 
                 <!-- flex container with purchasing plans -->
-                <div class="sopphing-cards-container d-flex justify-center f-gap40">
+                <div class="shopping-cards-container d-flex justify-center f-gap40">
 
                     <!-- fist card
                     Professional card -->

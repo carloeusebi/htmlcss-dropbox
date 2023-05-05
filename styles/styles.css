@@ -7,13 +7,14 @@
 
 /* !custom properties */
 :root{
-    --hero-bg-color: #b4d0e7;
-    --blue-btn-color: #0061ff;
+    --jumbo-bg-color: #b4d0e7;
+    --blue-btn-color: #0061ff;    
+    /* btn on hover color is same color, it is just given 80% opacity adding 80 at the end of hex */
     --blue-btn-color-on-hover: #0061ff80;
     --fter-color: #000;
     --hdr-height: 75px;
 
-    /* partners logoes background */
+    /** partners logoes background */
     --bg-designit: #a2d39b;
     --bg-asu: #61082b;
     --bg-uf: #0093ce;
@@ -116,7 +117,6 @@ p{
 
 .btn{
     padding: 15px 20px;
-    position: relative;
     display: inline-block;
 }
 
@@ -135,11 +135,8 @@ p{
 }
 
 .btn.btn-main:hover{
+    /* color is same color, it is given 80% opacity in the form hf #0061ff => #0061ff80*/
     background-color: var(--blue-btn-color-on-hover);
-}
-
-.btn.btn-secondary:hover{
-    background-color: #eee;
 }
 
 .mr4{
@@ -160,6 +157,10 @@ p{
 
 .mb5{
     margin-bottom: 50px;
+}
+
+.mb7{
+    margin-bottom: 75px;
 }
 
 .mb10{
@@ -196,10 +197,6 @@ p{
     align-items: flex-start;
 }
 
-.d-flex.f-gap10{
-    gap: 10px;
-}
-
 .d-flex.f-gap40{
     gap: 40px;
 }
@@ -217,7 +214,7 @@ header{
     height: var(--hdr-height);
     /* it's needed otherwise background is transparent */
     background-color: #fff;
-    padding: 20px 10px;
+    padding: 0 15px;
 
     position: fixed;
     top: 0;
@@ -226,27 +223,28 @@ header{
     z-index: 1;    
 }
 
-/* this gives the same space between the logo and the list as the list elements themselves */
-.logo{
-    padding-right: 10px;
-}
-
 header a{
     color: black;
     text-decoration: none;
-    padding: 10px;
+    display: inline-block;
 }
 
-header li:hover{
-    border-bottom: 2px solid green;
-    height: var(--hdr-height);
-    /* border top prevents boder bottom to push text up 2px */
+header li{
+    line-height: var(--hdr-height);
+    padding-left: 15px;
+    padding-right: 15px;    
     border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+}   
+
+header li:hover{
+    border-bottom: 2px solid black;
 }
 
 /* header button is a little bit shorter than the others so it needs some tweaking */
-header .btn.btn-main{
-    padding: 7px 15px;
+header .btn{
+    padding: 10px 10px;
+    display: inline;
 }
 
 /* !MAIN */
@@ -255,33 +253,20 @@ section{
     margin-bottom: 100px;
 }
 
-/* !hero section */
-section#hero{
+/* !jumbo section */
+section#jumbo{
     /* this way background is mainly the choosen color but the last bit is transparent as the rest of the main */
-    background: linear-gradient(var(--hero-bg-color) 85%, transparent 15%);
+    background: linear-gradient(var(--jumbo-bg-color) 85%, transparent 15%);
     padding-top: 50px;
     font-size: 1.2rem;
 }
 
-#hero .container-big{
-    /* position relative gives the left container a non-static position, to give the arrow proper placement */
-    position: relative;
-}
-
-#hero .flex-left{
+#jumbo .flex-left{
     flex: 0 0 30%;
 }
 
-#hero .flex-right{
+#jumbo .flex-right{
     flex: 0 0 70%;
-}
-
-#hero .fa-arrow-down{
-    position: absolute;
-    /* bottom at 15% should follow background transition*/
-    bottom: 15%;
-    left: 0;
-    padding-bottom: 10px;
 }
 
 /*! shop section */
@@ -291,7 +276,7 @@ section#hero{
 }
 
 /* containers margin gives it room form the table under */
-.sopphing-cards-container{
+.shopping-cards-container{
     margin-bottom: 20px;
 }
 
@@ -333,7 +318,7 @@ section#hero{
     padding: 5px;
 }
 
-.card-body .btn{
+.shopping-cards-container .btn{
     display: block;
     text-align: center;
     margin: 20px 0;
@@ -374,8 +359,7 @@ section#hero{
 }
 
 .clients-logoes-container img{
-    /* since hover effect is a border, i can't use percentages to give imgs width or they will resize on hover, to give them width: 50% i take the square width( 100vw / 3 cols / 2 per row and divide it by 2, => 100wv / 12 */
-    width: calc(100vw / 12);
+    width: 60%;
 }
 
 /* this makes svgs white */
@@ -387,11 +371,12 @@ img.svg{
     flex: 0 0 50%;
     /* to be perfectly squared their height must also be the same as the width, which is 100vw / 3 columns / 2 per rows */
     height: calc(100vw / 6);
+    border: 15px solid transparent;
 }
 
 /* effect on hover is just a transparent border */
 .clients-logoes-container .flex-item:hover{
-    border: 30px solid rgba(255, 255, 255, .2);
+    border-color: rgba(255, 255, 255, .3);
 }
 
 /* main column between the logoes, it is given padding and background */
@@ -435,7 +420,7 @@ img.svg{
 
 /* the free-trial card, background and text color are given; also lots of padding to properly give it height */
 .business-clients-bottom{
-    background-color: var(--hero-bg-color);
+    background-color: var(--jumbo-bg-color);
     color: #61082b;
     padding: 100px 0;
 }
