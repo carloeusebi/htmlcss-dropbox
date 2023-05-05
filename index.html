@@ -23,36 +23,265 @@
     CARLO EUSEBI -->
 
     <!-- HEADER -->
-    <header class="d-flex justify-space-between align-center">
+    <header class="d-flex justify-space-between align-flex-start">
 
         <!-- header's left element -->
-        <div class="flex-left d-flex align-center">
-
-            <!-- a couple of thoughts about how buttons work; to me they should be has high as header, since the bar on hover appears on header's bottom edge; but in Marco's demo only text looks clickable, while hover effects appear while hovering on non-clickable parts; I don't like that sinse it may be measleading for the user but I chose anyway to mimic that behaviour to replicate the project -->
-            
-            <!-- <img src="img/logo-small.png" alt="logo"> -->
+        <div class="flex-left d-flex align-flex-start">
 
             <nav>
-                <ul class="d-flex">
+                <ul class="main-list d-flex align-flex-start">
+
+                    <!-- * logo -->
                     <!-- flex is used to align logo inside button, wich is as high as header -->
-                    <li class="d-flex align-center"><a class="btn btn-secondary" href="#"><img src="img/logo-small.png" alt="logo"></a></li>
-                    <li><a class="btn btn-secondary" href="#">Perchè Dropbox</a></li>
-                    <li><a class="btn btn-secondary" href="#">Funzioni</a></li>
-                    <li><a class="btn btn-secondary" href="#">Piani e Prezzi</a></li>
+                    <li class="d-flex align-center no-hover-fx">
+                        <a href="#">
+                            <img class="logo" src="img/logo-small.png" alt="logo">
+                        </a>
+                    </li>
+
+                    <!-- * Perchè dropbox -->
+                    <!-- # two drop down columns -->
+                    <li class="nav-list-element"><span class="list-description">Perchè Dropbox</span>                        
+                        <div class="nav-hidden-content d-flex">
+                            <div class="flex-left">
+                                <ul>
+                                    <li class="hidden-li-title">Panoramica</li>
+                                        <li><a href="#">Ispirati</a></li>
+                                        <li><a href="#">Cosa dicono i clienti</a></li>
+                                        <li><a href="#">Integrazioni di app</a></li>
+                                        <li><a href="#">Risorse</a></li>
+                                    </ul>
+                                </div>
+                                <div class="flex-right">
+                                    <ul>
+                                        <li class="hidden-li-title">Lavora al meglio con Dropbox</li>                                        
+                                        <li><a href="#">Condividi file</a></li>                                     
+                                        <li><a href="#">Archivia e organizza</a></li>                                     
+                                        <li><a href="#">Sincronizza i tuoi dispositivi</a></li>                                     
+                                        <li><a href="#">Proteggi i tuoi dati</a></li>                                     
+                                        <li><a href="#">Connetti tra loro i membri del team in remoto</a></li>                                     
+                                        <li><a href="#">Fai avanzare il tuo lavoro</a></li>                                     
+                                        <li><a href="#">Backup sempre attivo</a></li>                                     
+                                        <li><a href="#">Firma un documento</a></li>                                     
+                                        <li><a href="#">Monitora i dati analitici dei documenti</a></li>                                     
+                                    </ul>
+                                </div>
+                        </div>
+                    </li>
+
+                    <!-- * Prodotti -->
+                    <!-- # one drop down column -->
+                    <li class="nav-list-element"><span class="list-description">Prodotti</span>
+                        <div class="nav-hidden-content single-col">
+                            <ul>
+                                <!-- 1st list item -->
+                                <li class="hidden-li-title">Non limitarti all'archiviazione di file con Dropbox</li>
+                                <li>
+                                    <a href="#">
+                                        <div class="d-flex align-center f-gap10">
+                                            <div class="flex-left">
+                                                <img src="img/hidden-navbar-icons/Dropbox-logo-nav.svg" alt="dropbox-logo">
+                                            </div>
+                                            <div class="flex-right">
+                                                <div class="title">Dropbox</div>
+                                                <p class="description">
+                                                    Archivia, condividi e accedi ai file su tutti i dispositivi
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                
+                                <!-- 2nd list item -->
+                                <li>
+                                    <a href="#">
+                                        <div class="d-flex align-center f-gap10">
+                                            <div class="flex-left">
+                                                <img src="img/hidden-navbar-icons/Backup-logo-nav2.svg" alt="backup-logo">
+                                            </div>
+                                            <div class="flex-right">
+                                                <div class="title">Backup</div>
+                                                <p class="description">
+                                                    Esegui il backup automatico dei tuoi dispositivi
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <!-- 3rd list item -->
+                                <li>
+                                    <a href="#">
+                                        <div class="d-flex align-center f-gap10">
+                                            <div class="flex-left">
+                                                <img src="img/hidden-navbar-icons/dropbox-sign-logo3.svg" alt="sign-logo">
+                                            </div>
+                                            <div class="flex-right">
+                                                <div class="title">Sign</div>
+                                                <p class="description">
+                                                    Richiedi e aggiungi firme ai documenti
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <!-- 4th list item -->
+                                <li>
+                                    <a href="#">
+                                        <div class="d-flex align-center f-gap10">
+                                            <div class="flex-left">
+                                                <img src="img/hidden-navbar-icons/DocSend-logo-nav.svg" alt="docsend-logo">
+                                            </div>
+                                            <div class="flex-right">
+                                                <div class="title">DocSend</div>
+                                                <p class="description">
+                                                    Invia i documenti in modo sicuro e tieni traccia dell'attività
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <!-- 5th list item -->
+                                <li>
+                                    <a href="#">
+                                        <div class="d-flex align-center f-gap10">
+                                            <div class="flex-left">
+                                                <img src="img/hidden-navbar-icons/Capture-logo-nav.svg" alt="capture-logo">
+                                            </div>
+                                            <div class="flex-right">
+                                                <div class="title">Capture</div>
+                                                <p class="description">
+                                                    Crea registrazioni dello schermo e videomessaggi
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <!-- 6th list item -->
+                                <li>
+                                    <a href="#">
+                                        <div class="d-flex align-center f-gap10">
+                                            <div class="flex-left">
+                                                <img src="img/hidden-navbar-icons/replay-logo-nav.svg" alt="replay-logo">
+                                            </div>
+                                            <div class="flex-right">
+                                                <div class="title">Replay</div>
+                                                <p class="description">
+                                                    Revisiona e approva i video più rapidamente
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <!-- 7th list item -->
+                                <li>
+                                    <a href="#">
+                                        <div class="d-flex align-center f-gap10">
+                                            <div class="flex-left">
+                                                <img src="img/hidden-navbar-icons/arrow_right.svg" alt="arrow right">
+                                            </div>
+                                            <div class="flex-right">
+                                                <div class="title">Accesso anticipato</div>
+                                                <p class="description">
+                                                    Scopri in anteprima le nuove esperienze del prodotto
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!--* Soluzioni -->
+                    <!-- # two drop down columns -->
+                    <li class="nav-list-element"><span class="list-description">Soluzioni</span>
+                        <div class="nav-hidden-content d-flex">
+                            <div class="flex-left">
+                                <ul>
+                                    <li class="hidden-li-title">Ruoli</li>
+                                    <li><a href="#">Creativi</a></li>
+                                    <li><a href="#">Vendite</a></li>
+                                    <li><a href="#">Marketing</a></li>
+                                    <li><a href="#">Risorse umane</a></li>
+                                    <li><a href="#">IT</a></li>
+                                    <li><a href="#">Team lead</a></li>
+                                    <li><a href="#">Personale</a></li>
+                                </ul>
+                            </div>
+                            <div class="flex-right">
+                                <ul>
+                                    <li class="hidden-li-title">Settori</li>                                        
+                                    <li><a href="#">Edilizia</a></li>                                     
+                                    <li><a href="#">Tecnologia</a></li>                                     
+                                    <li><a href="#">Settore manifatturiero</a></li>                                     
+                                    <li><a href="#">Mass Media</a></li>                                     
+                                </ul>
+                            </div>
+                    </div>
+                    </li>
+
+                    <!-- *Prezzi -->
+                    <li class="nav-list-element"><a class="btn-links" href="#">Prezzi</a></li>
+                    
+                    
                 </ul>
             </nav>
-
+            
         </div>
-
+        
         <!-- header's right element -->
         <div class="flex-right">
+
             <nav>
-                <ul class="d-flex">
-                    <li><a class="btn btn-secondary" href="#">Supporto</a></li>
-                    <li><a class="btn btn-secondary" href="#">Contatta l'ufficio vendite</a></li>
-                    <li><a class="btn btn-secondary" href="#">Accedi</a></li>
-                    <!-- actual button is as large as header, but only text  -->
-                    <li><a class="btn btn-main" href="#">Inizia</a></li>
+                <ul class="main-list d-flex">
+
+                    <!-- *Contatti -->
+                    <!-- # two drop down columns -->
+                    <li class="nav-list-element"><span class="list-description">Contatti</span>
+                        <div class="nav-hidden-content d-flex">
+                            <div class="flex-left">
+                                <ul>
+                                    <li class="hidden-li-title">Supporto</li>
+                                        <li><a href="#">Centro assistenza</a></li>
+                                        <li><a href="#">Forum della community</a></li>
+                                    </ul>
+                                </div>
+                                <div class="flex-right">
+                                    <ul>
+                                        <li class="hidden-li-title">Contatta l'ufficio vendite</li>                                        
+                                        <li><a href="#">Invia email</a></li>                                     
+                                        <li><a href="#">+39 02757271</a></li>                  
+                                    </ul>
+                                </div>
+                        </div>
+                    </li>
+
+                    <!-- *scarica applicazione -->
+                    <!-- # one drop down column -->
+                    <li class="nav-list-element"><span class="list-description">Scarica applicazione</span>
+                        <div class="nav-hidden-content single-col right">
+                            <ul>
+                                <li><a href="#">App desktop</a></li>
+                                <li><a href="#">App per i dispositivi mobili</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- *registrati -->
+                    <li><a class="btn-links" href="#">Registrati</a></li>
+
+                    <!-- *accedi -->
+                    <li><a class="btn-links" href="#">Accedi</a></li>
+
+                    <!-- *inizia -->
+                    <li class="no-hover-fx"><a class="btn btn-main btn-links" href="#">Inizia</a></li>
                 </ul>
             </nav>
         </div>

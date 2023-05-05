@@ -11,8 +11,10 @@
     --blue-btn-color: #0061ff;    
     /* btn on hover color is same color, it is just given 80% opacity adding 80 at the end of hex */
     --blue-btn-color-on-hover: #0061ff80;
+    --chat-color: #0d2481;
     --fter-color: #000;
-    --hdr-height: 75px;
+    --navbar-hover-color: #eee9e2;
+    --hdr-height: 50px;
 
     /** partners logoes background */
     --bg-designit: #a2d39b;
@@ -201,6 +203,10 @@ p{
     align-items: flex-start;
 }
 
+.d-flex.f-gap10{
+    gap: 10px;
+}
+
 .d-flex.f-gap40{
     gap: 40px;
 }
@@ -227,28 +233,109 @@ header{
     z-index: 1;    
 }
 
+header .logo{
+    padding-right: 10px;
+}
+
 header a{
     color: black;
     text-decoration: none;
     display: inline-block;
 }
 
-header li{
+header .list-description,
+header .btn-links{
     line-height: var(--hdr-height);
-    padding-left: 15px;
-    padding-right: 15px;    
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid transparent;
-}   
+    padding: 0 25px;    
+    cursor: pointer;
+}
 
-header li:hover{
-    border-bottom: 2px solid black;
+/* not all navbar list elements have an hover fx */
+header .main-list > li:not(.no-hover-fx):hover{
+    background-color: var(--navbar-hover-color);
+}
+
+header .main-list > li{
+    height: var(--hdr-height);
+}
+
+header .nav-hidden-content > *{
+    flex: 1 0 50%;
+}
+
+.nav-hidden-content{
+    display: none;
+}
+
+.nav-list-element{
+    position: relative;
+    cursor: pointer;
+}
+
+header .nav-list-element:hover .nav-hidden-content{
+    display: flex;
+}
+
+header .nav-hidden-content{
+    position: absolute;
+    background-color: var(--navbar-hover-color);
+    top: 100%;
+
+    padding: 15px 0;
+    font-size: .75rem;
+}
+
+header .hidden-li-title{
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+header .nav-hidden-content a{
+    padding: 10px 15px;
+    width: 100%;
+}
+
+header .nav-hidden-content a:hover{
+    background-color: #e7e0d7;
+}
+
+header .nav-hidden-content.single-col{
+    width: 15vw;
+
+}
+header .nav-hidden-content.single-col.right{
+    right: 0;
+}
+
+.nav-hidden-content.single-col .description{
+    font-size: .6rem;
+    padding-top: 5px;
+    color: gray;
+}
+
+header .flex-left .nav-hidden-content.d-flex{
+    left: 0;
+    right: -20vw;
+}
+
+header .flex-right .nav-hidden-content.d-flex{
+    right: 0;
+    left: -20vw;
+}
+
+.nav-hidden-content.single-col .flex-left{
+    flex: 0 0 15%;
+}
+
+.nav-hidden-content.single-col .flex-right{
+    flex: 0 0 80%;
 }
 
 /* header button is a little bit shorter than the others so it needs some tweaking */
 header .btn{
-    padding: 10px 10px;
+    padding: 15px 10px;
     display: inline;
+    font-weight: bold;
 }
 
 /* !MAIN */
@@ -517,8 +604,8 @@ img.svg{
 .chat-top-bar{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    background-color: #0d2481;
-    color: white;
+    background-color: var(--chat-color);
+    color: white;   
     padding: 10px;
     text-align: center;
     user-select: none;
@@ -588,7 +675,7 @@ img.svg{
 .chat-bottom button{
     border: none;
     background-color: white;
-    color: #0d2481;
+    color: var(--chat-color);
     cursor: pointer
 }
 
