@@ -41,11 +41,11 @@
 
                     <!-- * Perchè dropbox -->
                     <!-- # two drop down columns -->
-                    <li class="nav-list-element"><span class="list-description">Perchè Dropbox</span>                        
-                        <div class="nav-hidden-content d-flex">
+                    <li class="nav-li-with-dropdown">Perchè Dropbox                        
+                        <div class="nav-dropdown d-flex">
                             <div class="flex-left">
-                                <ul>
-                                    <li class="hidden-li-title">Panoramica</li>
+                                <h6>Panoramica</h6>
+                                    <ul>
                                         <li><a href="#">Ispirati</a></li>
                                         <li><a href="#">Cosa dicono i clienti</a></li>
                                         <li><a href="#">Integrazioni di app</a></li>
@@ -53,8 +53,8 @@
                                     </ul>
                                 </div>
                                 <div class="flex-right">
+                                    <h6>Lavora al meglio con Dropbox</h6>                                        
                                     <ul>
-                                        <li class="hidden-li-title">Lavora al meglio con Dropbox</li>                                        
                                         <li><a href="#">Condividi file</a></li>                                     
                                         <li><a href="#">Archivia e organizza</a></li>                                     
                                         <li><a href="#">Sincronizza i tuoi dispositivi</a></li>                                     
@@ -71,11 +71,12 @@
 
                     <!-- * Prodotti -->
                     <!-- # one drop down column -->
-                    <li class="nav-list-element"><span class="list-description">Prodotti</span>
-                        <div class="nav-hidden-content single-col">
+                    <li class="nav-li-with-dropdown">Prodotti
+                        <!-- this drowpdown menu has images, so its strucutre is a little bit more complex -->
+                        <div class="nav-dropdown single-col left dropdown-with-images">
+                            <h6>Non limitarti all'archiviazione di file con Dropbox</h6>
                             <ul>
                                 <!-- 1st list item -->
-                                <li class="hidden-li-title">Non limitarti all'archiviazione di file con Dropbox</li>
                                 <li>
                                     <a href="#">
                                         <div class="d-flex align-center f-gap10">
@@ -201,11 +202,11 @@
 
                     <!--* Soluzioni -->
                     <!-- # two drop down columns -->
-                    <li class="nav-list-element"><span class="list-description">Soluzioni</span>
-                        <div class="nav-hidden-content d-flex">
+                    <li class="nav-li-with-dropdown">Soluzioni
+                        <div class="nav-dropdown d-flex">
                             <div class="flex-left">
+                                <h6>Ruoli</h6>
                                 <ul>
-                                    <li class="hidden-li-title">Ruoli</li>
                                     <li><a href="#">Creativi</a></li>
                                     <li><a href="#">Vendite</a></li>
                                     <li><a href="#">Marketing</a></li>
@@ -216,8 +217,8 @@
                                 </ul>
                             </div>
                             <div class="flex-right">
+                                <h6>Settori</h6>                                        
                                 <ul>
-                                    <li class="hidden-li-title">Settori</li>                                        
                                     <li><a href="#">Edilizia</a></li>                                     
                                     <li><a href="#">Tecnologia</a></li>                                     
                                     <li><a href="#">Settore manifatturiero</a></li>                                     
@@ -228,7 +229,7 @@
                     </li>
 
                     <!-- *Prezzi -->
-                    <li class="nav-list-element"><a class="btn-links" href="#">Prezzi</a></li>
+                    <li><a class="btn-links" href="#">Prezzi</a></li>
                     
                     
                 </ul>
@@ -244,18 +245,18 @@
 
                     <!-- *Contatti -->
                     <!-- # two drop down columns -->
-                    <li class="nav-list-element"><span class="list-description">Contatti</span>
-                        <div class="nav-hidden-content d-flex">
+                    <li class="nav-li-with-dropdown">Contatti
+                        <div class="nav-dropdown d-flex">
                             <div class="flex-left">
+                                <h6>Supporto</h6>
                                 <ul>
-                                    <li class="hidden-li-title">Supporto</li>
                                         <li><a href="#">Centro assistenza</a></li>
                                         <li><a href="#">Forum della community</a></li>
                                     </ul>
                                 </div>
                                 <div class="flex-right">
+                                    <h6>Contatta l'ufficio vendite</h6>                                        
                                     <ul>
-                                        <li class="hidden-li-title">Contatta l'ufficio vendite</li>                                        
                                         <li><a href="#">Invia email</a></li>                                     
                                         <li><a href="#">+39 02757271</a></li>                  
                                     </ul>
@@ -265,8 +266,8 @@
 
                     <!-- *scarica applicazione -->
                     <!-- # one drop down column -->
-                    <li class="nav-list-element"><span class="list-description">Scarica applicazione</span>
-                        <div class="nav-hidden-content single-col right">
+                    <li class="nav-li-with-dropdown">Scarica applicazione
+                        <div class="nav-dropdown single-col right">
                             <ul>
                                 <li><a href="#">App desktop</a></li>
                                 <li><a href="#">App per i dispositivi mobili</a></li>
@@ -281,7 +282,12 @@
                     <li><a class="btn-links" href="#">Accedi</a></li>
 
                     <!-- *inizia -->
-                    <li class="no-hover-fx"><a class="btn btn-main btn-links" href="#">Inizia</a></li>
+                    <li class="no-hover-fx">
+                        <a class="btn btn-main btn-links" href="#">
+                            Comincia subito
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -335,7 +341,7 @@
                 <div class="d-flex mb5">
                     <!-- display flex prefectly aligns radioes and text -->
                     <label for="monthly-billing" class="mr4 d-flex align-center">
-                        <input id="monthl <input idy-billing" value="monthly-billing" name="business-plan" type="radio" class="radio-btn" checked>
+                        <input id="monthly-billing" value="monthly-billing" name="business-plan" type="radio" class="radio-btn" checked>
                         Fatturazione mensile
                     </label>
                     
@@ -722,13 +728,17 @@
 
             <!-- chat top bar -->
             <div class="chat-top-bar d-flex justify-center">
-                <div class="chat-icon">
+
+                <!-- chat icon -->
+                <div class="flex-left">
                     <i class="fa-solid fa-comments"></i>
                 </div>
 
-                <div class="chat-chat">Chat</div>
+                <!-- chat -->
+                <div class="flex-center">Chat</div>
 
-                <div class="chat-controls">
+                <!-- chat minimize and close icons -->
+                <div class="flex-right">
                     <i class="fa-solid fa-minus"></i>
                     <i class="fa-solid fa-xmark"></i>
                 </div>
@@ -741,29 +751,51 @@
                 <!-- chat conversation -->
                 <div class="chat-conversation">
 
-                    <div class="text-row d-flex">
+
+                    <!-- every single message is inside a flex row on;  -->
+                    <div class="text-row chat-operator d-flex mb2">
+
                         <div class="sender">
                             <img class="sender-avatar" src="img/chat-logo.png" alt="sender avatar">                                
                             <div class="sender-name">Carmelle</div>
                         </div>
+
                         <div class="text-message">
                             Hello, can I help answer any questions about Dropbox?
                         </div>
-                    </div>
+                    </div>      
+
+
+
+                    <div class="text-row chat-client d-flex mb2">
+
+                        <div class="text-message">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae quibusdam dolor minima accusamus odio voluptates quisquam. Praesentium minima beatae officia cumque aliquid, est similique non? Nostrum laborum corrupti inventore quisquam!
+                        </div>
+
+                        <div class="sender">
+                            <img class="sender-avatar" src="img/chat-logo.png" alt="">                                
+                            <div class="sender-name">Me</div>
+                        </div>
+
+                    </div>      
                     
                 </div>
                 
-                <!-- chat type section -->
+                <!-- chat textarea section -->
                 <div class="chat-bottom">
                     
+                    <!-- text area is inside a form with a submit button, flex is used to position send button on the top left corner-->
                     <form class="d-flex justify-space-between align-flex-start">
                         <textarea name="chat-input" id="chat-input" rows="5" placeholder="Type you message..."></textarea>
                         <button type="submit"><i class="fa-solid fa-right-to-bracket fa-2x"></i></button>
                     </form>                   
                     
+                    <!-- dropbox logo on chat's bottom left corner -->
                     <img class="chat-db-logo mb1" src="img/chat-logo.png" alt="sender avatar">  
                     
-                    <div class="chat-engine d-flex  justify-center align-center">
+                    <!-- flex is used to aling align text and image -->
+                    <div class="chat-engine d-flex justify-center align-center">
                         <span>Powered by </span>
                         <img class="chat-teamsupport" src="img/teamsupport.png" alt="team support logo">
                     </div>

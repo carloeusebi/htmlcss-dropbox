@@ -121,6 +121,8 @@ p{
     border: 5px solid var(--blue-btn-color);
 }
 
+/* # buttons */
+
 .btn{
     padding: 15px 20px;
     display: inline-block;
@@ -243,99 +245,131 @@ header a{
     display: inline-block;
 }
 
-header .list-description,
-header .btn-links{
-    line-height: var(--hdr-height);
-    padding: 0 25px;    
-    cursor: pointer;
-}
-
 /* not all navbar list elements have an hover fx */
 header .main-list > li:not(.no-hover-fx):hover{
     background-color: var(--navbar-hover-color);
 }
 
+/* every list element is as high as header */
 header .main-list > li{
     height: var(--hdr-height);
+    /* instead of giving a class for every li element, display flex and align center are given here, even if utility exists */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 20px;
 }
 
-header .nav-hidden-content > *{
+/* if the dropdown menu has two columns, they both take 50% of the space, if it has only one column it will take all the width */
+header .nav-dropdown > *{
     flex: 1 0 50%;
 }
 
-.nav-hidden-content{
+/* dropdowns menus are hidden*/
+.nav-dropdown{
     display: none;
 }
 
-.nav-list-element{
+.nav-li-with-dropdown{
     position: relative;
-    cursor: pointer;
 }
 
-header .nav-list-element:hover .nav-hidden-content{
+/* when overing over list element with dropdown the dropdown appears, it is given displey flex to give the columns inside a proper layout */
+header .nav-li-with-dropdown:hover .nav-dropdown{
     display: flex;
 }
 
-header .nav-hidden-content{
+/* nav-dropdown with a single column dont need display flex */
+header .nav-li-with-dropdown:hover .nav-dropdown.single-col{
+    display: block;
+}
+
+
+/* dropdown menus are given display absolute otherwhise when open they will cause the parent li element to take their width */
+header .nav-dropdown{
     position: absolute;
     background-color: var(--navbar-hover-color);
     top: 100%;
 
     padding: 15px 0;
     font-size: .75rem;
+    z-index: 1;
 }
 
-header .hidden-li-title{
+header h6{
     padding: 10px 15px;
     font-weight: bold;
+    font-size: .75rem;
 }
 
-header .nav-hidden-content a{
+/* all the row lenght must be clickable; display block allow the link to take all row lenght */
+header .nav-dropdown a{
+    display: block;
     padding: 10px 15px;
-    width: 100%;
 }
 
-header .nav-hidden-content a:hover{
+header .nav-dropdown a:hover{
     background-color: #e7e0d7;
 }
 
-header .nav-hidden-content.single-col{
-    width: 15vw;
-
+/* every drop down with a single col has a predifined width*/
+header .nav-dropdown.single-col{
+    width: 250px;
 }
-header .nav-hidden-content.single-col.right{
+
+/* sing columns on the left side of the header are aligned to the left... */
+header .nav-dropdown.single-col.left{
+    left: 0;
+}
+
+/* ...and columns on the right are aligned on the right */
+header .nav-dropdown.single-col.right{
     right: 0;
 }
 
-.nav-hidden-content.single-col .description{
+.nav-dropdown.single-col .description{
     font-size: .6rem;
     padding-top: 5px;
     color: gray;
 }
 
-header .flex-left .nav-hidden-content.d-flex{
+/* dropdowns with two columns on the left need to bo aligned so that they grow larger on the center side */
+header .flex-left .nav-dropdown.d-flex{
     left: 0;
-    right: -20vw;
+    right: -300px;
 }
 
-header .flex-right .nav-hidden-content.d-flex{
+/* dropdowns with two columns on the right need to bo aligned so that they grow larger on the center side */
+header .flex-right .nav-dropdown.d-flex{
     right: 0;
-    left: -20vw;
+    left: -300px;
 }
 
-.nav-hidden-content.single-col .flex-left{
+/* next two selectors controls columns on the "Prodotti" dropdown menu */
+.dropdown-with-images .flex-left{
     flex: 0 0 15%;
 }
 
-.nav-hidden-content.single-col .flex-right{
-    flex: 0 0 80%;
+.dropdown-with-images .flex-right{
+    flex: 0 0 85%;
 }
 
 /* header button is a little bit shorter than the others so it needs some tweaking */
 header .btn{
-    padding: 15px 10px;
+    padding: 13px;
     display: inline;
     font-weight: bold;
+    margin-left: 5px;
+}
+
+/* animation for the "comincia subito" button */
+header .btn .fa-arrow-right{
+    padding: 0 10px 0 30px;
+    transition: transform 300ms;
+}
+
+header .btn:hover .fa-arrow-right{
+    transform: translateX(5px);
 }
 
 /* !MAIN */
@@ -583,23 +617,13 @@ img.svg{
     width: 20vw;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 0 20px gray;
+    box-shadow: 0 0 20px black;
 
     position: fixed;
     right: 1vw;
     bottom: 1vw;
-    z-index: 1;
-    /* animation: chat-animation 1.5s ease-in-out 3.5s 1 forwards; */
+    z-index: 1; 
 }
-
-/* @keyframes chat-animation {
-    0%{
-        bottom: -80vh;
-    }
-    100%{
-        bottom: 2vh;
-    }    
-} */
 
 .chat-top-bar{
     border-top-left-radius: 5px;
@@ -611,36 +635,60 @@ img.svg{
     user-select: none;
 }
 
-.chat-controls i{
+/* this gives pointer to chat minimize and close buttons */
+.chat-top-bar .flex-right i{
     cursor: pointer;
 }
 
-.chat-top-bar .chat-chat{
-    flex-grow: 2;
+/* the center element will take as much space as it needs */
+.chat-top-bar .flex-center{
+    flex-grow: 1;
     font-weight: bold;
 }
 
+/* chat conversation window has a fixed height */
 .chat-conversation{
     height: 35vh;
     overflow-y: auto;
 }
 
+/* chat body has 20px padding all sides but bottom has 5px */
 .chat-body{
-    padding: 20px;
-    padding-bottom: 5px;
+    padding: 20px 20px 5px 20px;
 }
 
 .text-row .sender{
-    flex-basis: 15%;
+    flex: 0 0 20%;
+    /* align-self: flex end; this way avatar will always be aligned with the bottom of the text bubble*/
     align-self: flex-end;
     text-align: center;
+}
+
+.text-row .text-message{
+    flex: 0 0 80%;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.text-row.chat-operator .sender{
     padding-right: 10px;
 }
 
+.text-row.chat-client .sender{    
+    padding-left: 10px;
+}
+
+/* this makes the avatar a circle */
 .sender-avatar{
     border-radius: 50%;
 }
 
+/* this make client logo gray */
+.text-row.chat-client .sender-avatar{
+    filter: grayscale(1);
+}
+
+/* sender name and chat engine text have same style */
 .sender .sender-name,
 .chat-engine span{
     font-size: .75rem;
@@ -648,20 +696,25 @@ img.svg{
     user-select: none;
 }
 
-.text-row .text-message{
-    flex-basis: 85%;
+/* chat-operator text bubble has light blue background, and it is not round on the side where avatar is */
+.text-row.chat-operator .text-message{
     background-color: #edf4ff;
-    padding: 15px;
-    border-radius: 20px;
-    border-bottom-left-radius: 0;
-    margin-bottom: 10px;
+    border-bottom-left-radius: 0;    
 }
 
+/* chat-client text bubble has light gray background, and it is not round on the side where avatar is */
+.text-row.chat-client .text-message{
+    background-color: #eee;
+    border-bottom-right-radius: 0;
+}
+
+/* this divider separates chat conversation from text input */
 .chat-bottom{
     border-top: 1px solid black;
     padding-top: 15px;
 }
 
+/* next two selector stylize textarea and send button */
 .chat-bottom textarea{
     border: none;
     outline: none;
