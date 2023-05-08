@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
+/* since i can't touch html font is imported via css */
+
 /* !css reset */
 *{
     margin: 0;
@@ -10,6 +12,7 @@
 /* !custom properties */
 :root{
     --jumbo-bg-color: #b4d0e7;
+    --secondary-bg-color: #eee9e2;
     --blue-btn-color: #0061ff;    
     /* btn on hover color is same color, it is just given 80% opacity adding 80 at the end of hex */
     --blue-btn-color-on-hover: #0061ff80;
@@ -19,16 +22,7 @@
     --hdr-height: 50px;
     --body-bg-color: #f7f5f2;
 
-    /** partners logoes background */
-    --bg-designit: #a2d39b;
-    --bg-asu: #61082b;
-    --bg-uf: #0093ce;
-    --bg-topps: #ff1c1c;
-    --bg-wbr: #d5001f;
-    --bg-hearst: #b4d0e7;
-    --bg-lonely-planet: #0d2481;
-    --bg-cco: #ffd830;
-    --bg-main-logo: #f5f5f5;
+    --small-container-size: 1080px;
 }
 
 /* !generals */
@@ -48,7 +42,7 @@ li{
 
 /*some <a> on the page use default decoration and colors, we only modify <a> where is needed*/
 a{
-    text-decoration: none;
+    color: black;
 }
 
 /* every image needs resize */
@@ -58,6 +52,7 @@ img{
     display: block;
 }
 
+/* all hr needs ti be hidden */
 hr{
     display: none;
 }
@@ -76,8 +71,9 @@ h2{
 }
 
 h3{
-    font-size: 1.5rem;
-    padding-bottom: 30px;
+    font-size: 1.2rem;
+    padding-bottom: 15px;
+    font-weight: 600;
 }
 
 h4{
@@ -106,7 +102,7 @@ p{
 }
 
 .container-small{
-    max-width: 1080px;
+    max-width: var(--small-container-size);
     margin: 0 auto;
 }
 
@@ -134,6 +130,10 @@ p{
 }
 
 /* # buttons */
+
+a.btn{
+    text-decoration: none;
+}
 
 .btn{
     padding: 15px 20px;
@@ -195,13 +195,10 @@ p{
     margin-bottom: 75px;
 }
 
-.mb10{
+/* margin-bottom 100px class brakes a few things in the new layout, so it needs to be deleted */
+/* .mb10{
     margin-bottom: 100px;
-}
-
-.border-bottom{
-    border-bottom: 1px solid lightgray;
-}
+} */
 
 /* !flex utilities */
 .d-flex{
@@ -387,17 +384,17 @@ header .btn{
     margin-left: 5px;
 }
 
-/* animation for the "comincia subito" button */
 header .btn .fa-arrow-right{
-    padding: 0 10px 0 30px;
-    transition: transform 300ms;
-}
-
-header .btn:hover .fa-arrow-right{
-    transform: translateX(5px);
+    display: none;
 }
 
 /* !MAIN */
+/* this is needed to reorder section */
+main{
+    display: flex;
+    flex-direction: column;
+}
+
 /* every section has margin bottom */
 section{
     margin-bottom: 100px;
@@ -410,26 +407,21 @@ section#jumbo{
     font-size: 1.2rem;
 }
 
+/* since new jumbo layout is very different form old site and I can't touch html to modify it, some things needs to be changed*/
 
 #jumbo h1{
     max-width: 35%;
-    background-color: #eee9e2;
+    background-color: var(--secondary-bg-color);
     padding: 40px;
+    display: inline-block;
 }
 
+/* jumbo is now as big as the page so the container needs to be resized */
 #jumbo .container-big{
     max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
 }
 
-#jumbo .flex-left{
-    flex: 0 0 35%;
-    background-color: #eee9e2;
-    padding: 40px;
-    height: 530px;
-}
-
+/* new img needs to be moved up relative to herself to align with the title */
 #jumbo .flex-right{
     flex: 0 0 65%;
     padding: 50px 0px;
@@ -438,6 +430,14 @@ section#jumbo{
     position: relative;
     left: 0;
     top: -270px;
+}
+
+/* left part needs to be shortened to be aligned with new moved image */
+#jumbo .flex-left{
+    flex: 0 0 35%;
+    background-color: var(--secondary-bg-color);
+    padding: 40px;
+    height: 530px;
 }
 
 #jumbo .flex-right figure{
@@ -451,22 +451,23 @@ section#jumbo{
     padding-bottom: 30px;
 }
 
+
 #jumbo .link-to-shop{
     display: none;
 }
 
 /*! shop section */
+
+/* to move section to the bottom of main */
+#shop{
+    order: 1;
+    margin-top: 100px;
+}
+
 /* every card takes one third of the width minus the 40px gaps between them */
 .card-flex{
     flex: 0 0 calc((100% - 80px) / 3);
 }
-
-/* containers margin gives it room form the table under */
-.shopping-cards-container{
-    margin-bottom: 20px;
-}
-
-/* card property, they should be pretty self-explainatory */
 
 .card{
     background-color: white;
@@ -492,6 +493,7 @@ section#jumbo{
     margin-left: -20px;
 }
 
+/* lots of things need to be deleted*/
 .card .fa-li,
 .card .fa-solid,
 .card h6,
@@ -512,10 +514,11 @@ section#jumbo{
     cursor: pointer;
 }
 
+/* this adds -> to links */
 .card a::after{
     content: '\f061';
     font: var(--fa-font-solid);
-    text-decoration: none !important;
+    text-decoration: none;
     padding-left: 15px;
     text-align: right;
 }
@@ -534,20 +537,22 @@ section#jumbo{
 
 
 /*! partners section */
-/* just two flex items, left one's a litte bigger */
-#partners .flex-left{
-    flex: 0 0 55%;
-}
-
-#partners .flex-right{
-    flex: 0 0 45%;
-    padding: 50px;
+/* this section is no more */
+#partners{
+    display: none;
 }
 
 /*! business section */
 /* negative margin align content to main container */
 .business-promo-container{
     margin: 0 -30px;
+}
+
+/* not much has changed, only added a grey border to images*/
+.business-promo-container figure{
+    background-color: var(--secondary-bg-color);
+    margin-bottom: 15px;
+    padding: 25px;
 }
 
 /* every item width is divided by 3 to have 3 columns, padding is used to give them gutter */
@@ -558,128 +563,96 @@ section#jumbo{
 
 /*! business clients */
 
-/* this divides the client's logoes section in three columns */
-.clients-logoes-container > *{
-    flex: 0 0 calc(100% / 3);
+#dropbox-business-clients{
+    text-align: center;
+    margin-bottom: 0;
 }
 
-.clients-logoes-container img{
-    width: 60%;
+#dropbox-business-clients .container-small p{
+    margin-bottom: 75px;
 }
 
-/* this makes svgs white */
-img.svg{
-    filter:invert(1);
+.clients-logoes-container{
+    background-color: #1e1919;
 }
 
-.clients-logoes-container .flex-item{
-    flex: 0 0 50%;
-    /* to be perfectly squared their height must also be the same as the width, which is 100vw / 3 columns / 2 per rows */
-    height: calc(100vw / 6);
-    border: 15px solid transparent;
+/* left and right columns are deleted */
+.clients-logoes-container .flex-left,
+.clients-logoes-container .flex-right{
+    display: none;
 }
 
-/* effect on hover is just a transparent border */
-.clients-logoes-container .flex-item:hover{
-    border-color: rgba(255, 255, 255, .3);
+/* central column is now given container's dimentions; it is also flexed because its children needs to be aligned on two columns*/
+.clients-logoes-container .flex-center{
+    width: var(--small-container-size);
+    margin: 150px auto 75px; 
+    display: flex;
+    position: relative;
 }
 
-/* main column between the logoes, it is given padding and background */
-#dropbox-business-clients .flex-center{
-    background-color: var(--bg-main-logo);
-    padding: 50px;
+.clients-logoes-container .flex-center img{
+    background-color: #b4dc19;
+    /* fixed dimentions and padding are needed to give img element its background */
+    padding: 150px;
+    max-width: 620px;
+    max-height: 500px;
 }
 
-/*! partners-logo backgrounds */
-.bg-designit{
-    background-color: var(--bg-designit)
+.clients-logoes-container .flex-center p{
+    flex-grow: 1;
+    background-color: #f7f5f2;
+    text-align: left;
+    padding: 24px;
+    margin-bottom: 0;
 }
 
-.bg-asu{
-    background-color: var(--bg-asu);
+.clients-logoes-container .flex-center p:first-of-type{
+    font-size: 1.5rem;
+    line-height: 1;
+    height: 500px;    
 }
 
-.bg-uf{
-    background-color: var(--bg-uf);
+/* this unlucky p element becomes a flex item, unluckily it must be repositioned by hand. */
+.clients-logoes-container .flex-center p:last-of-type{
+    position: absolute;
+    bottom: 0;
+    left: 620px;
 }
 
-.bg-topps{
-    background-color: var(--bg-topps);
+/* the arrow element that appears when overing over the logo */
+.clients-logoes-container .flex-center::after{
+    content: '';
+    font: var(--fa-font-solid);
+    width: 100px;
+    height: 100px;
+    background-color: #1e1919;
+    color: #f7f5f2;
+    font-size: 3rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 40%;
+    right: -100px;
 }
 
-.bg-wbr{
-    background-color: var(--bg-wbr);
-}
-
-.bg-hearst{
-    background-color: var(--bg-hearst);
-}
-
-.bg-lonely-planet{
-    background-color: var(--bg-lonely-planet);
-}
-
-.bg-cco{
-    background-color: var(--bg-cco);
+.clients-logoes-container .flex-center:hover::after{
+    content: '\f054';
+    transition: transform 750ms;
+    transform: translateX(-100px);
+    cursor: pointer;
 }
 
 /* the free-trial card, background and text color are given; also lots of padding to properly give it height */
 .business-clients-bottom{
-    background-color: var(--jumbo-bg-color);
-    color: #61082b;
-    padding: 100px 0;
-}
-
-.business-clients-bottom .flex-left{
-    flex: 0 0 60%;
-}
-
-/* to align button in the top right corner */
-.business-clients-bottom .flex-right{
-    flex: 0 0 40%;
-    text-align: right;
-    align-self: flex-start;
-}
-
-/* need to overwrite h2 padding or this particalar h2 won't be vertically aligned */
-.business-clients-bottom h2{
-    padding: 0;
-}
-
-/* this particular button is a little bit flatter than the others so it needs some tweaking. */
-.business-clients-bottom .btn{
-    padding-left: 75px;
-    padding-right: 75px;
+    display: none;
 }
 
 /*! FAQ */
-.faq-row{
-    /* no padding on the left */
-    padding: 30px 30px 30px 0;
-    cursor: pointer;
-}
-
-/* faq answer is not normally visible */
-.faq-answer{
-    padding-top: 30px;
+#faq{
     display: none;
-}
-
-/* on hover it becomes visible */
-.faq-row:hover .faq-answer{
-    display: block;
-}
-
-
-/* on hover the arrow down needs to no longer be visible and... */
-.faq-row:hover .fa-angle-down{
-    display: none;
-}
-
-/* ... be replaced by an arrow up */
-.faq-row:hover .faq-question::after{
-    content: "\f106";
-    font: var(--fa-font-solid);
 }
 
 /*! CHAT */
@@ -837,16 +810,6 @@ img.svg{
     margin: 0 20px;
 }
 
-@keyframes link-animation {
-    from{
-        bottom: -100px;
-    }
-    to{
-        bottom: 20px;
-    }
-    
-}
-
 /*! FOOTER */
 footer{
     background-color: var(--fter-color);
@@ -864,7 +827,7 @@ footer li{
 }
 
 footer a:hover{
-    color: #aaa;
+    text-decoration: underline;
 }
 
 /* 5 flex columns take 20% of space */
@@ -877,7 +840,6 @@ footer .language-selector{
     /* pad-right is used to determinate the above divisor bar length */
     padding-right: 75px;
     border-top: 2px solid gray;
-    color: gray;
     cursor: pointer;
 }
 
@@ -885,6 +847,20 @@ footer .language{
     padding: 0 5px;
 }
 
-footer .language-selector:hover{
-    color: white;
+footer .language-selector:hover .language{
+    text-decoration: underline;
+}
+
+.fter-top{
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.fter-top::after{
+    content: '\f099 \00a0 \00a0 \f09a \00a0 \00a0 \f167';
+    font: var(--fa-font-brands);
+    display: inline-block;
+    padding: 50px 0 20px;
+    font-size: 1.4rem;
+    cursor: pointer;
 }
