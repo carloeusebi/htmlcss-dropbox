@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
 /* !css reset */
 *{
     margin: 0;
@@ -15,6 +17,7 @@
     --fter-color: #000;
     --navbar-hover-color: #eee9e2;
     --hdr-height: 50px;
+    --body-bg-color: #f7f5f2;
 
     /** partners logoes background */
     --bg-designit: #a2d39b;
@@ -34,8 +37,9 @@ html{
 }
 
 body{
-    font-family: "Opens Sans", sans-serif;
+    font-family: "Work Sans", sans-serif;
     padding-top: var(--hdr-height);
+    background-color: var(--body-bg-color);
 }
 
 li{
@@ -43,7 +47,7 @@ li{
 }
 
 /*some <a> on the page use default decoration and colors, we only modify <a> where is needed*/
-a.btn{
+a{
     text-decoration: none;
 }
 
@@ -55,21 +59,20 @@ img{
 }
 
 hr{
-    margin: 60px 0;
-    width: 25%;
-    border: none;
-    border-bottom: 1px solid lightgray;
+    display: none;
 }
 
 h1{
-    font-size: 4rem;
-    font-weight: 900;
+    font-size: 3rem;
+    font-weight: normal;
     padding-bottom: 50px;
 }
 
 h2{
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     padding-bottom: 40px;
+    font-weight: normal;
+    text-align: center;
 }
 
 h3{
@@ -79,6 +82,7 @@ h3{
 
 h4{
     font-size: 1.5rem;
+    font-weight: normal;
     margin-bottom: 15px;
 }
 
@@ -113,12 +117,20 @@ p{
     height: 20px;
     border-radius: 50%;
     margin-right: 10px;
-    border: 2px solid gray;
+    border: 1px solid black;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.radio-btn:checked{
-    border: 5px solid var(--blue-btn-color);
+.radio-btn:checked::after{
+    content: '';
+    display: inline-block;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color: black;   
 }
 
 /* # buttons */
@@ -145,6 +157,18 @@ p{
 .btn.btn-main:hover{
     /* color is same color, it is given 80% opacity in the form hf #0061ff => #0061ff80*/
     background-color: var(--blue-btn-color-on-hover);
+}
+
+.btn::after{
+    content: '\f061';
+    font: var(--fa-font-solid);
+    padding-left: 50px;
+    display: inline-block;
+    transition: transform 300ms;
+}
+
+.btn:hover::after{
+    transform: translateX(5px);
 }
 
 .mr4{
@@ -227,6 +251,7 @@ header{
     /* it's needed otherwise background is transparent */
     background-color: #fff;
     padding: 0 15px;
+    border-bottom: 1px solid #e7e0d7;
 
     position: fixed;
     top: 0;
@@ -380,31 +405,57 @@ section{
 
 /* !jumbo section */
 section#jumbo{
-    /* this way background is mainly the choosen color but the last bit is transparent as the rest of the main */
-    background: linear-gradient(var(--jumbo-bg-color) 85%, transparent 15%);
-    padding-top: 50px;
+    margin-bottom: 0;    
+    padding-top: 0;
     font-size: 1.2rem;
 }
 
+
+#jumbo h1{
+    max-width: 35%;
+    background-color: #eee9e2;
+    padding: 40px;
+}
+
+#jumbo .container-big{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #jumbo .flex-left{
-    flex: 0 0 30%;
+    flex: 0 0 35%;
+    background-color: #eee9e2;
+    padding: 40px;
+    height: 530px;
 }
 
 #jumbo .flex-right{
-    flex: 0 0 70%;
+    flex: 0 0 65%;
+    padding: 50px 0px;
+    background-color: var(--jumbo-bg-color);
+    
+    position: relative;
+    left: 0;
+    top: -270px;
+}
+
+#jumbo .flex-right figure{
+    display: flex;    
+    justify-content: center;
+    padding: 30px;
+}
+
+#jumbo .btn{
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 #jumbo .link-to-shop{
-    text-decoration: none;
-    color: black;
+    display: none;
 }
 
 /*! shop section */
-/* padding gives it room on top so that h2 title doesnt go under header when click on arrow brings to this section */
-#shop{
-    padding-top: 100px;
-}
-
 /* every card takes one third of the width minus the 40px gaps between them */
 .card-flex{
     flex: 0 0 calc((100% - 80px) / 3);
@@ -418,39 +469,55 @@ section#jumbo{
 /* card property, they should be pretty self-explainatory */
 
 .card{
-    border: 1px solid lightgray;
+    background-color: white;
 }
 
 .card .card-title{
-    border-bottom: 1px solid lightgray;
-    text-align: center;
-    padding: 10px
+    padding: 20px 20px 10px 20px;
 }
 
 .card .card-body{
-    padding: 35px;
+    padding: 0 20px 15px 20px;
 }
 
-.fa-check{
-    color: var(--blue-btn-color);
-}
-
-/* this is needed to overwrite .fa-ul default margin-left; this file needs to be linked AFTER fa's stylesheet in order for this to work*/
-.fa-ul{
-    margin-left: 25px;
-}
-
-.card-body .price{
-    font-weight: bolder;
-}
-
+.card-body .price,
 .card-body .price-recurrency{
-    color: gray;
-    margin-bottom: 50px;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.card-body ul li{
-    padding: 5px;
+.card li{
+    display: inline-block;
+    margin-left: -20px;
+}
+
+.card .fa-li,
+.card .fa-solid,
+.card h6,
+.card ul:last-of-type,
+.card ul:first-of-type li:last-of-type,
+.card.only-onrow-card,
+.card:last-of-type p {
+    display: none;
+}
+
+.card p, .card a{
+    color: var(--blue-btn-color);
+    font-weight: 500;
+}
+
+.card p{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.card a::after{
+    content: '\f061';
+    font: var(--fa-font-solid);
+    text-decoration: none !important;
+    padding-left: 15px;
+    text-align: right;
 }
 
 .shopping-cards-container .btn{
@@ -459,9 +526,12 @@ section#jumbo{
     margin: 20px 0;
 }
 
-.card-body.d-flex .flex-left{
-    flex-basis: 66%;
+.card .btn{
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
 }
+
 
 /*! partners section */
 /* just two flex items, left one's a litte bigger */
