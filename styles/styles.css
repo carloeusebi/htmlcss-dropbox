@@ -614,7 +614,7 @@ img.svg{
 
 /*! CHAT */
 #fixed-chat{
-    width: 20vw;
+    width: 350px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 20px black;
@@ -648,7 +648,7 @@ img.svg{
 
 /* chat conversation window has a fixed height */
 .chat-conversation{
-    height: 35vh;
+    height: 350px;
     overflow-y: auto;
 }
 
